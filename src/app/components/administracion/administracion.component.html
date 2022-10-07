@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <app-abm-alumnos (comunicaAlumno)="agregarAlumno($event)"></app-abm-alumnos>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-lista-alumnos [alumnos]="alumnosAdmin"></app-lista-alumnos>
+    </div>
+  </div>
+</div>
+

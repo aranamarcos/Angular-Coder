@@ -1,0 +1,26 @@
+#navbar{
+    background-color: #3f51b5;
+    height: 100%;
+    min-height: 90vh;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5) inset;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    width: 80%;
+    list-style: none;
+    text-align: center;
+}
+
+li{
+    padding: 20px 0px;
+    border-bottom: solid 1px whitesmoke;
+}
+
+
+a{
+    font-size: large;
+    text-decoration: none;
+    color: white;
+}

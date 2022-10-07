@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Alta de Alumno</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="formulario" (ngSubmit)="submitForm()">
+
+        <!-- Nombre -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" [ngClass]="{'is-invalid': formulario.get('nombre')?.errors && formulario.get('nombre')?.touched}" placeholder="Nombre" formControlName="nombre">
+          <div class="invalid-feedback">
+            <small *ngIf="formulario.get('nombre')?.errors?.['required']">El campo nombre es requerido</small>
+            <small *ngIf="formulario.get('nombre')?.errors?.['pattern']">El formato de nombre no es correcto</small>
+          </div>
+        </div>
+
+        <!-- Apellido -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" [ngClass]="{'is-invalid': formulario.get('apellido')?.errors && formulario.get('apellido')?.touched}" placeholder="Apellido" formControlName="apellido">
+          <div class="invalid-feedback">
+            <small *ngIf="formulario.get('apellido')?.errors?.['required']">El campo apellido es requerido</small>
+            <small *ngIf="formulario.get('apellido')?.errors?.['pattern']">El formato de apellido no es correcto</small>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" [ngClass]="{'is-invalid': formulario.get('email')?.errors && formulario.get('email')?.touched}" placeholder="Email" formControlName="email">
+          <div class="invalid-feedback">
+            <small *ngIf="formulario.get('email')?.errors?.['required']">El campo email es requerido</small>
+            <small *ngIf="formulario.get('email')?.errors?.['pattern']">El formato email no es correcto</small>
+          </div>
+        </div>
+
+        <!-- Usuario -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" [ngClass]="{'is-invalid': formulario.get('usuario')?.errors && formulario.get('usuario')?.touched}" placeholder="Usuario" formControlName="usuario">
+          <div class="invalid-feedback">
+            <small *ngIf="formulario.get('usuario')?.errors?.['required']">El campo usuario es requerido</small>
+          </div>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" [ngClass]="{'is-invalid': formulario.get('password')?.errors && formulario.get('password')?.touched}" placeholder="Contraseña" formControlName="password">
+          <div class="invalid-feedback">
+            <small *ngIf="formulario.get('password')?.errors?.['required']">El campo contraseña es requerido</small>
+            <small *ngIf="formulario.get('password')?.errors?.['minlength']">La contraseña debe tener al menos 6 caracteres</small>
+            <small *ngIf="!formulario.get('password')?.errors?.['minlength'] && formulario.get('password')?.errors?.['pattern']">La contraseña debe tener al menos una letra mayuscula</small>
+          </div>
+        </div>
+
+        <!-- Boton submit -->
+        <button class="btn btn-primary" type="submit">Alta Alumno</button>
+      </form>
+    </div>
+  </div>
+</div>
