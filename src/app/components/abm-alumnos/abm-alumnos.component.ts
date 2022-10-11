@@ -28,6 +28,7 @@ export class AbmAlumnosComponent implements OnInit {
   submitForm(): void {
     console.log(this.formulario.value);
     this.comunicaAlumno.emit(this.formulario.value);
+    this.formulario.reset();
   }
 
 }
